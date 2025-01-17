@@ -2,9 +2,10 @@ from azure.cognitiveservices.vision.computervision import ComputerVisionClient
 from msrest.authentication import CognitiveServicesCredentials
 from azure.cognitiveservices.vision.computervision.models import OperationStatusCodes
 import time
+import os
 
-endpoint = "ENTER ENDPOINT HERE"
-key = "ENTER KEY HERE"
+endpoint = os.getenv("LAB1_ENDPOINT") 
+key = os.getenv("LAB1_KEY")
 
 credentials = CognitiveServicesCredentials(key)
 
@@ -19,7 +20,6 @@ def read_image(uri):
 
     # SDK call
     rawHttpResponse = client.read(uri, language="en", raw=True)
-
     # Get ID from returned headers
     operationLocation = rawHttpResponse.headers["Operation-Location"]
     idLocation = len(operationLocation) - numberOfCharsInOperationId

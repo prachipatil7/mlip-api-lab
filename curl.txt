@@ -1,0 +1,2 @@
+curl -X GET "http://localhost:3000/api/v1/analysis/" -H "Content-type: application/json" -d '{"uri": "https://media.istockphoto.com/id/1973365581/vector/sample-ink-rubber-stamp.jpg?s=612x612&w=0&k=20&c=_m6hNbFtLdulg3LK5LRjJiH6boCb_gcxPvRLytIz0Ws="}'
+ 
